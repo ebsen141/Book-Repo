@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Book Repo</h1></br>
+
+<div class="row">
+
+  {# icon and search-box #}
+  <div class="col-6 align-left">
+    <i id="search-icon" class="fas fa-search"></i>
+    <input id="search-input" placeholder="Search">&nbsp &nbsp
+    <select id="author-select">
+      <option value="0">--Filter--
+        {% for author in authors_dataset %}
+            <option value="{{ author.id }}">
+            {{ author.title }}
+            </option>
+        {% endfor %}
+    </select>
+  </div>
+
+  {# book-list section #}
+  <div id="replaceable-content" class="col-6">
+  {% include 'home/partial_book_list.html' %}
+  </div>
+
+</div>
+
+{% endblock %}

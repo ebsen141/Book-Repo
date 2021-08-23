@@ -1,0 +1,9 @@
+{% if books_dataset %}
+   {% for data in books_dataset %}
+    <h2>{{ data.title }}</h2>
+    {{ data.book_author }}</br></br>
+
+    {% endfor %}
+{% else %}
+    <p>No Books found.</p>
+{% endif %}
